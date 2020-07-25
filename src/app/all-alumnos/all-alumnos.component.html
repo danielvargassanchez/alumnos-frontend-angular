@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="alumno" *ngFor="let alumno of alumnos">
+        <div class="titulo">
+            <h3>{{ alumno.nombre | uppercase }} {{ alumno.apellido | uppercase}}</h3>
+        </div>
+        <div class="datos">
+            <p>Número de control: {{ alumno.num_control | uppercase }}</p>
+            <p>Carrera: {{ alumno.carrera | uppercase}}</p>
+            <button class="btn btn-info" (click)="edit(alumno)">Editar</button>
+            <button class="btn btn-danger" (click)="eliminar(alumno)" >Eliminar</button>   
+        </div>
+    </div>
+</div>

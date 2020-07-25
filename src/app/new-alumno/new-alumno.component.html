@@ -1,0 +1,34 @@
+<div class="container">
+    <form [formGroup]="form">
+        <br>
+        <div class="alert alert-success" role="alert" *ngIf="creado">
+           {{ mensaje }}
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="errorCreado">
+            Error
+        </div>
+        <h1>{{ titulo }}</h1>
+        <br>
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" name="nombre" formControlName="nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="">Apellido</label>
+            <input type="text" class="form-control" name="apellido" formControlName="apellido">
+        </div>
+
+        <div class="form-group">
+            <label for="">Numero de control</label>
+            <input type="text" class="form-control" name="num_control" formControlName="num_control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Carrera</label>
+            <input type="text" class="form-control" name="carrera" formControlName="carrera">
+        </div>
+        <button *ngIf="esNuevo" class="btn btn-primary" (click)="save()"  >Save</button>
+        <button *ngIf="!esNuevo" class="btn btn-info" (click)="edit()" >Edit</button>
+    </form>
+</div>
